@@ -51,15 +51,26 @@ func isPalindrome(x int) bool {
 
 // best answer? ↓
 func isPalindrome2(x int) bool {
+	// 負の数や、0 以外で末尾が 0 の数は回文にならない
 	if x < 0 || (x%10 == 0 && x != 0) {
 		return false
 	}
 
 	rev := 0
 	for x > rev {
+		// これは 整数を反転する 一般的なアルゴリズムです。
+		// x % 10 は x の 最後の桁を取得する。
+		// rev * 10 で 既存の rev を1桁左にずらす（繰り上げ）。
+		// 最後の桁を rev に 追加。
 		rev = rev*10 + x%10
 		x /= 10
+		// x = 123の場合
+		// x % 10 → 3を取得 rev * 10 → 0 * 10 = 0 revの更新 → 0 + 3 = 3
+		// x % 10 → 2を取得 rev * 10 → 3 * 10 = 30 revの更新 → 30 + 2 = 32
+		// x % 10 → 1を取得 rev * 10 → 32 * 10 = 320 revの更新 → 320 + 1 = 321
 	}
 
+	// 偶数桁の場合: x == rev
+	// 奇数桁の場合: x == rev/10 (中央の桁を除外)
 	return x == rev || x == rev/10
 }
