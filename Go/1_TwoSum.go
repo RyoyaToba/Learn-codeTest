@@ -21,6 +21,7 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 */
 
+// Best
 func TwoSum(nums []int, target int) []int {
 
 	numMap := make(map[int]int)
@@ -34,4 +35,16 @@ func TwoSum(nums []int, target int) []int {
 	}
 
 	return nil // 未達
+}
+
+// Bad
+func TwoSum2(nums []int, target int) []int {
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
+	}
+	return nil
 }
