@@ -25,7 +25,7 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 */
 
 // My first answer↓
-func isPalindrome(x int) bool {
+func IsPalindrome(x int) bool {
 	str := strconv.Itoa(x) // 文字列に変換
 	dig := len(str)        // 桁数
 	half := len(str) / 2   // 半分

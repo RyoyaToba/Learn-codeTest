@@ -23,7 +23,7 @@ Constraints:
 strs[i] consists of only lowercase English letters if it is non-empty.
 */
 
-func longestCommonPrefix(strs []string) string {
+func LongestCommonPrefix(strs []string) string {
 
 	if len(strs) == 0 {
 		return ""

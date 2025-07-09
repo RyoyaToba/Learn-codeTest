@@ -29,7 +29,7 @@ Constraints:
 s consists of parentheses only '()[]{}'.
 */
 
-func isValid(s string) bool {
+func IsValid(s string) bool {
 	// 開く括弧に対応する閉じる括弧をマップで定義
 	opens := map[rune]rune{
 		'(': ')', '{': '}', '[': ']',

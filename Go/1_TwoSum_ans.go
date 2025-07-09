@@ -21,7 +21,7 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 */
 
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
 
 	numMap := make(map[int]int)
 
